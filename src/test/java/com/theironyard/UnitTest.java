@@ -5,6 +5,7 @@ import junitparams.Parameters;
 import net.doughughes.testifier.exception.CannotAccessMethodException;
 import net.doughughes.testifier.exception.CannotFindEnumException;
 import net.doughughes.testifier.exception.CannotFindMethodException;
+import net.doughughes.testifier.exception.CannotInvokeMethodException;
 import net.doughughes.testifier.test.TestifierTest;
 import net.doughughes.testifier.util.Invoker;
 import org.junit.Test;
@@ -28,7 +29,7 @@ public class UnitTest extends TestifierTest{
         try {
             Enum unit = Invoker.getEnumValue(Class.forName("com.theironyard.Unit"), name);
             millimeters = (double) Invoker.invoke(unit, "toMillimeters");
-        } catch (ClassNotFoundException | CannotFindMethodException | CannotAccessMethodException | CannotFindEnumException e) {
+        } catch (CannotInvokeMethodException | ClassNotFoundException | CannotFindMethodException | CannotAccessMethodException | CannotFindEnumException e) {
             fail(e.getClass().getName() + ": " + e.getMessage());
         }
 
