@@ -16,7 +16,7 @@ package com.theironyard;
         values has an associated number, which is the length in millimeters. For
         example, a foot is 304.8 millimeters.
 
-        In enums, you specify default values in as if you were invoking a
+        In enums, you specify default values as if you were invoking a
         constructor. For example, let's say we had a unit of furlongs. A furlong
         is 1/8 mile, or 201,168 millimeters. To define this value for our enum
         we would use:

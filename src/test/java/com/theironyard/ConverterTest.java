@@ -2,10 +2,7 @@ package com.theironyard;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
-import net.doughughes.testifier.exception.CannotAccessMethodException;
-import net.doughughes.testifier.exception.CannotFindEnumException;
-import net.doughughes.testifier.exception.CannotFindMethodException;
-import net.doughughes.testifier.exception.CannotInvokeMethodException;
+import net.doughughes.testifier.exception.*;
 import net.doughughes.testifier.matcher.RegexMatcher;
 import net.doughughes.testifier.output.OutputStreamInterceptor;
 import net.doughughes.testifier.test.TestifierTest;
@@ -30,7 +27,7 @@ public class ConverterTest extends TestifierTest{
             Enum fromUnit = Invoker.getEnumValue(Class.forName("com.theironyard.Unit"), fromUnitName);
             Enum toUnit = Invoker.getEnumValue(Class.forName("com.theironyard.Unit"), toUnitName);
             converted = (double) Invoker.invokeStatic(Class.forName("com.theironyard.Converter"), "convert", length, fromUnit, toUnit);
-        } catch (CannotInvokeMethodException | ClassNotFoundException | CannotFindMethodException | CannotAccessMethodException | CannotFindEnumException e) {
+        } catch (MethodIsNotStaticException | CannotInvokeMethodException | ClassNotFoundException | CannotFindMethodException | CannotAccessMethodException | CannotFindEnumException e) {
             fail(e.getClass().getName() + ": " + e.getMessage());
         }
 
