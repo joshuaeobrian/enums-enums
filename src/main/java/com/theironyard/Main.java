@@ -16,15 +16,16 @@ public class Main {
             Use the Converter.convert method at least 3 times using at least 6
             different units.
          */
-        // todo: convert something
 
+        // todo: convert something
+        Converter.convert(193,Unit.FOOT,Unit.CENTIMETER);
 
         // todo: convert something else
 
-
+        Converter.convert(31,Unit.MILE,Unit.METER);
         // todo: convert yet another thing
 
-
+        Converter.convert(193,Unit.YARD,Unit.KILOMETER);
     }
 
 }
